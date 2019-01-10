@@ -15,6 +15,26 @@ window.onload = function(){
 		buttonLink.style.color = '';
 	};
 
+    $('.messages').slick({
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 2,
+      vertical: true,
+      adaptiveHeight: true,
+      prevArrow: $('#arrow-up'),
+      nextArrow: $('#arrow-down')
+    });
+
+    $('.team-members').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+    
+      arrows: false,
+      initialSlide: 1
+    });
+
 
 	$('.button').on('mousedown', event => {
 		$(event.currentTarget).addClass('btn-active');
@@ -33,58 +53,6 @@ window.onload = function(){
         	$(event.currentTarget).toggleClass("active");         
      });
 
-
-    //MESSAGES SLIDER
-
-    // function slider() {
-    // 	var messages = document.querySelectorAll('.message');
-    // 	for (var i = 0; i < messages.length; i++) {
-    // 		if (!messages[i].classList.contains('current')) {
-    // 			messages[i].style.display = 'none';
-    // 		}
-    // 	}
-    // }
-
-    // slider();
-
-    // var messages = document.querySelectorAll('.message');
-
-    // $('#arrow-down').on('click', event => {
-    // 		$.each(messages, function(key, value) {
-    // 			$(this).addClass('slide-up');
-    			
-    // 		});
-    // 		setTimeout(function() {
-    // 			messages[0].remove();
-    // 			$.each(messages, function(key, value) {
-    // 			$(this).removeClass('slide-up');
-    // 			})
-    // 		}, 1000);
-    // });
-
-	var counter = 1;
-	var messagesCount = $('.messages').children().length;
-
-    $('#arrow-down').on('click', event => {
-    	if(counter < messagesCount - 1) {
-	    	transHeight = -236 * (counter);
-	    	$('.messages').css({transform: 'translateY('+ transHeight + 'px)'});
-	    	counter++;
-    	}
-    });
-
-
-	$('#arrow-up').on('click', event => {
-		if(counter > 1) {
-	    	transHeight = -236 * (counter - 2);
-	    	$('.messages').css({transform: 'translateY('+ transHeight + 'px)'});
-	    	counter--;
-    	}
-
-	});
-
-	//END SLIDER
-
     $('input[type="text"]').on('mouseenter', event => {
     	$(event.currentTarget).css({borderColor: '#1de9b6'});
     })
@@ -102,8 +70,46 @@ window.onload = function(){
     })
 
     $('.burger').on('click', event => {
-    	$('nav ul').css({flexDirection: 'column', position: 'absolute', left: '0px'});
-    	$('nav ul li').css({marginTop: '5px'});
-    	$('nav').slideToggle();
+    	$('nav ul').addClass('hidden-menu');
+    	$('nav').slideToggle('fast');
     })
+
+    $('input[name="send-btn"]').on('click', function(e) {
+    	if (!validateForm()) {
+    		e.preventDefault();
+    		alert(1);
+       	}
+    });
+
+    function validateForm() {
+    	var contactForm = $('.contact-form');
+    	var firstName = $("input[name='name']");
+    	var lastName = $("input[name='lastname']");
+    	var email = $("input[name='email']").val().trim();
+    	var phone = $("input[name='phone']").val().trim();
+    	var message = $("textarea[name='message']").val().trim();
+    	var errors = false;
+
+    	if(firstName.val().trim().length === 0) {
+    		firstName.addClass('input-error');
+    		errors = true;
+    	}
+
+    	if(lastName.val().trim().length === 0) {  
+    		lastName.addClass('input-error');
+    		errors = true;
+    	}
+
+    	if(email.val().trim().length > 3 && (email.val().trim().includes('@')) 
+    		&& (email.val().trim().includes('.'))) {
+    			email.addClass('input-error');
+    			errors = true;
+    	} 
+
+
+    	if (errors) {
+    		contactForm.prepend("<span class='unfilled'>Fill this fields</span>");
+    		return false;
+    	}
+    }
 };

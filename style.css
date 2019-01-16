@@ -12,6 +12,38 @@ body {
 	width: 100%;
 }
 
+::-webkit-scrollbar-button {
+background-image:url('');
+background-repeat:no-repeat;
+width:6px;
+height:0px
+}
+
+::-webkit-scrollbar-track {
+background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color: rgb(13, 187, 213);
+}
+
+::-webkit-scrollbar-thumb:hover{
+background-color:#56999f;
+}
+
+::-webkit-resizer{
+background-image:url('');
+background-repeat:no-repeat;
+width:4px;
+height:0px
+}
+
+::-webkit-scrollbar{
+width: 5px;
+}
+
 /*HEADER SECTION*/
 
 header {
@@ -486,10 +518,13 @@ a#getstarted-btn {
 	width: 80%;
 	margin: 30px 0px 30px 50px;
 	box-shadow: 0 0 5px 2px #11b0b9;
+	height: 160px;
 }
 
 .comment-content {
 	margin: 30px;
+	overflow-y: auto;
+	height: 102px;
 }
 
 .name {
@@ -620,6 +655,7 @@ a#getstarted-btn {
 	width: 40%;
 	margin: 0 auto;
 	padding-bottom: 100px;
+	position: relative;
 }
 
 input[name="lastname"], input[name="phone"] {
@@ -654,7 +690,12 @@ input[type="text"].input-error{
 	box-shadow: 0 0 8px #df0505;
 }
 
-input[type="submit"] {
+textarea.input-error{
+	border: solid 1px #c00808;
+	box-shadow: 0 0 8px #df0505;
+}
+
+input[name="send-btn"] {
 	line-height: 55px;
 	border-radius: 5px;
 	font-family: 'Roboto';
@@ -669,12 +710,13 @@ input[type="submit"] {
 	font-size: 15px;
 }
 
-input[type="submit"]:hover {
+input[name="send-btn"]:hover {
 	opacity: 0.7;
 }
 
 .form-container p {
 	line-height: initial;
+
 }
 
 .bottom-form-elements {
@@ -697,6 +739,25 @@ label {
 
 .unfilled {
 	color: red;
+}
+
+.success-form {
+	position: absolute;
+	width: 70%;
+	height: 200px;
+	background-color: #fff;
+	border: 2px solid #1de9b6;
+	border-radius: 5px;
+	text-align: center;
+	left: 50%;
+	top: 10%;
+	transform: translateX(-50%);
+	opacity: 0;
+}
+
+.success-form p {
+	padding-top: 80px;
+	font-size: 32px;
 }
 
 
@@ -913,7 +974,10 @@ label {
 
 	.comment-content {
 		margin: 20px;
+	}
 
+	.messages {
+		height: 400px;
 	}
 
 	.comment-content p {
@@ -1028,6 +1092,10 @@ label {
 		justify-content: flex-end;
 	}
 
+	.messages {
+		height: 400px;
+	}
+
 	.comment-content {
 		margin: 20px;
 
@@ -1132,10 +1200,10 @@ label {
 
 	.card-content {
 		position: static;
-		transform: translate(0, 0);
+		transform: translate(15px, 0);
 		text-align: left;
 		padding: 20px 0;
-		width: 40%;
+		width: 170px;
 		margin: 0 auto; 
 	}
 
@@ -1182,6 +1250,10 @@ label {
 	.comment {
 		margin: 20px 0px 20px 20px;
 		width: 100%;
+	}
+
+	.messages {
+		height: 400px;
 	}
 
 	.message {
@@ -1232,6 +1304,10 @@ label {
 		margin-bottom: 20px;
 	}
 
+	input[name="lastname"], input[name="phone"] {
+		float: initial;
+	}
+
 	.bottom-form-elements {
 		display: block;
 	}
@@ -1262,5 +1338,105 @@ label {
 	
 	.secondrow ul {
 		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 480px) {
+	.topmenu {
+		height: 60px;
+	}
+
+	.main-section h1 {
+		font-size: 32px;
+	}
+
+	.main-section p {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.buttons {
+		width: 100%;
+	}
+
+	a#buynow-btn, a#try-btn {
+		width: 140px;
+	}
+
+	.main-section {
+		padding-bottom: 30px;
+	}
+
+	.play-btn p {
+		font-size: 12px;
+	}
+
+	.play-btn .rect {
+		font-size: 20px;
+	}
+
+	.text-container {
+		padding-top: 20px;
+	}
+
+	.text-container h2 {
+		margin-bottom: 10px;
+		font-size: 28px;
+	}
+
+	.description {
+		margin-bottom: 20px;
+	}
+
+	.icon img, .icons p {
+		margin-bottom: 20px;
+	}
+
+	.cards {
+		margin-top: 20px;
+	}
+
+	.services-panel p {
+		margin: 0 10px 10px 10px; 
+		line-height: 1.7;
+	}
+
+	.picture {
+		margin: 0 auto 25px;
+		float: none;
+		display: block;
+	}
+
+	.annotation h2.title {
+		margin: 20px auto 20px;
+		font-size: 28px;
+	}
+
+	#getstarted-btn2 {
+		margin-top: 20px;
+	}
+
+	.messages {
+		height: 200px;
+	}
+
+	#arrow-up, #arrow-down {
+		display: block;
+	}
+
+	.team .socials {
+		padding-bottom: 20px;
+	}
+
+	.member-info .description {
+		margin-bottom: 20px;
+	}
+
+	input[name="lastname"], input[name="phone"] {
+		float: initial;
+	}
+
+	.footer {
+		padding-bottom: 30px;
 	}
 }

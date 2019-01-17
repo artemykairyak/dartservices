@@ -5,7 +5,6 @@
 	<title>Dart Device Manager</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800|Roboto" rel="stylesheet">
 </head>
 <body>
@@ -260,18 +259,24 @@
 			</div>
 			<div class="team-members">
 				<div class="member-slide">
-					<img class='member' src="img/putin.jpg" alt="">
+					<img class='member' data-num="1" data-name="Putin" src="img/putin.jpg" alt="">
+				</div>
+				<div class="member-slide selected-slide">
+					<img class="member memberselected" data-num="2" data-name="Trump" src="img/tramp.jpg" alt="">
 				</div>
 				<div class="member-slide">
-					<img class="member memberselected" src="img/tramp.jpg" alt="">
+					<img class='member' data-num="3" data-name="Navalny" src="img/navalny.jpg" alt="">
 				</div>
 				<div class="member-slide">
-					<img class='member' src="img/navalny.jpg" alt="">
+					<img class='member' data-num="4" data-name="Newton" src="img/newton.jpeg" alt="">
+				</div>
+				<div class="member-slide">
+					<img class='member' data-num="5" data-name="Obama" src="img/obama.jpg" alt="">
 				</div>
 			</div>
 			<div class="member-info">
 				<h4 class="name">Donald Trump</h4>
-				<p class='description'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim cumque assumenda, praesentium, autem minus vero aperiam fugiat explicabo cupiditate dignissimos alias tenetur libero reiciendis officiis, nostrum vitae debitis eveniet quo.</p>
+				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim cumque assumenda, praesentium, autem minus vero aperiam fugiat explicabo cupiditate dignissimos alias tenetur libero reiciendis officiis, nostrum vitae debitis eveniet quo.</p>
 			</div>
 			<div class="socials">
 				<img src="img/soc2.png" alt="">
@@ -288,7 +293,6 @@
 				<h2 class="title">Contact Us</h2>
 				<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
 			</div>
-
 			<div class="form-container">
 				<form class='contact-form' id="contact-form">
 					<p><input type="text" name="name"  placeholder="First Name"><input type="text" name="lastname" placeholder="Last Name"></p>
@@ -302,7 +306,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="footer">
 		<div class="bottommenu">
 			<div class="wrapper">
@@ -313,7 +316,7 @@
 					</div>
 					<ul>
 						<li><a href='#'>Home</a></li>
-						<li><a href='#'>Service</a></li>
+						<li><a href='#services'>Services</a></li>
 						<li><a href='#'>Extension</a></li>
 						<li><a href='#'>Pricing</a></li>
 						<li><a href='#'>Help</a></li>
